@@ -1,70 +1,137 @@
-# Getting Started with Create React App
+# 📊 Renata Analytics Dashboard (Bar + Gauge)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern React-based data visualization program for Renata PLC. This tool supports **two modes** — an interactive Bar Chart to visualize product sales and a Gauge Chart to monitor monthly sales. Toggle them easily using JSX: `<BarChart />` or `<GaugeStatusChart />`.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🌟 Features
 
-### `npm start`
+* 📈 **Bar Chart View** - Task 1
+  Visualize product-wise total sales and total value from CSV
+  → Auto-colored bars with intuitive **legend indicators**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* 🎯 **Gauge Chart View**  - Task 2
+  Select a month to monitor monthly sales against targets
+  → Auto-categorized into **Low**, **Medium**, or **High**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* 🧠 Smart status interpretation based on dynamic thresholds
 
-### `npm test`
+* 📁 Supports **CSV file parsing** using PapaParse
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* 🎨 Clean, interactive, responsive visual design
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* **Frontend**: React.js
+* **Visualization**: Chart.js (`react-chartjs-2`), `react-gauge-chart`
+* **CSV Parsing**: `papaparse`
+* **Styling**: Inline styles and minimal CSS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 📂 Project Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+Renata-App/
+├── public/
+│   ├── data.csv        # Used for bar chart
+│   ├── data2.csv       # Used for gauge chart
+├── src/
+│   ├── components/
+│   │   ├── GaugeChart.js        # GaugeStatusChart
+│   │   └── RenataBarChart.js    # BarChart
+│   ├── App.js          # Toggle charts here
+│   ├── App.css
+├── package.json
+├── README.md
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🚀 How to Run
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 1. Clone & Install
 
-## Learn More
+```bash
+git clone https://github.com/immza/Renata-Frontend.git
+cd Renata-Frontend
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 2. Start the App
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm start
+```
 
-### Code Splitting
+> App runs at: `http://localhost:3000`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 🧪 Toggle Chart
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+In `App.js`:
 
-### Making a Progressive Web App
+* To show **Bar Chart**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+  ```jsx
+  import { BarChart } from "./components/RenataBarChart";
+  <BarChart />
+  ```
+  ![bar](screenshots/bar.png)
+  
+* To show **Gauge Chart**:
 
-### Advanced Configuration
+  ![gauge](./gaugechart.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+  ```jsx
+  import GaugeStatusChart from "./components/GaugeChart";
+  <GaugeStatusChart />
+  ```
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📸 Screenshots
 
-### `npm run build` fails to minify
+### 🎯 Gauge Status Chart
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+| Low Sales            | Medium Sales            | High Sales            |
+| -------------------- | ----------------------- | --------------------- |
+| ![Low](screenshots/gauge2.png) | ![Medium](screenshots/gauge3.png) | ![High](screenshots/gauge4.png) |
+
+* Default (no month selected):
+  ![No Month](./gauge1.png)
+
+### 📊 Bar Chart
+
+| Tooltip View         | Full Layout          |
+| -------------------- | -------------------- |
+| ![Bar 1](./bar2.png) | ![Bar 2](./bar1.png) |
+
+---
+
+## 🧠 Status Logic
+
+* **Low**: sales ≤ 3M
+* **Medium**: 3M < sales < 7M
+* **High**: sales ≥ 7M
+
+Gauge automatically reflects the range with intuitive color segments and status labels.
+
+---
+
+## 📦 Data Input
+
+* `data.csv` → used in **Bar Chart**
+* `data2.csv` → used in **Gauge Chart**
+
+> CSVs are parsed dynamically using `PapaParse`, no backend required.
+
+---
+
+## 👨‍💻 Author
+
+Built by Moinuddin Zubair
+Assignment Project for **Renata PLC**
