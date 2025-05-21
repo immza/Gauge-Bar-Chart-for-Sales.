@@ -1,16 +1,16 @@
 # 📊 Renata Analytics Dashboard (Bar + Gauge)
 
-A modern React-based data visualization program for Renata PLC. This tool supports **two modes** — an interactive Bar Chart to visualize product sales and a Gauge Chart to monitor monthly sales. Toggle them easily using JSX: `<BarChart />` or `<GaugeStatusChart />`.
+A modern React-based data visualization program for Renata PLC. This tool supports **two modes** — an interactive Bar Chart (Task 1a) to visualize product sales and a Gauge Chart (Task 1b) to monitor monthly sales. Toggle them easily using JSX: `<BarChart />` or `<GaugeStatusChart />`.
 
 ---
 
 ## 🌟 Features
 
-* 📈 **Bar Chart View** - Task 1
+* 📈 **Bar Chart View** - Task 1a
   Visualize product-wise total sales and total value from CSV
   → Auto-colored bars with intuitive **legend indicators**
 
-* 🎯 **Gauge Chart View**  - Task 2
+* 🎯 **Gauge Chart View**  - Task 1b
   Select a month to monitor monthly sales against targets
   → Auto-categorized into **Low**, **Medium**, or **High**
 
@@ -84,7 +84,7 @@ In `App.js`:
   
 * To show **Gauge Chart**:
 
-  ![gauge](./gaugechart.png)
+  ![gauge](screenshots/gaugechart.png)
 
   ```jsx
   import GaugeStatusChart from "./components/GaugeChart";
@@ -102,13 +102,13 @@ In `App.js`:
 | ![Low](screenshots/gauge2.png) | ![Medium](screenshots/gauge3.png) | ![High](screenshots/gauge4.png) |
 
 * Default (no month selected):
-  ![No Month](./gauge1.png)
+  ![No Month](screenshots/gauge1.png)
 
 ### 📊 Bar Chart
 
 | Tooltip View         | Full Layout          |
 | -------------------- | -------------------- |
-| ![Bar 1](./bar2.png) | ![Bar 2](./bar1.png) |
+| ![Bar 1](screenshots/bar2.png) | ![Bar 2](screenshots/bar1.png) |
 
 ---
 
