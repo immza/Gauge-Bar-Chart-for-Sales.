@@ -133,5 +133,4 @@ Gauge automatically reflects the range with intuitive color segments and status 
 
 ## 👨‍💻 Author
 
-Built by Moinuddin Zubair
-Assignment Project for **Renata PLC**
+Built by Moinuddin Zubair Ayan
