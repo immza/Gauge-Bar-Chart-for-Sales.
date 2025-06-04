@@ -1,6 +1,6 @@
 # 📊 Renata Analytics Dashboard (Bar + Gauge)
 
-A modern React-based data visualization program for Renata PLC. This tool supports **two modes** — an interactive Bar Chart (Task 1a) to visualize product sales and a Gauge Chart (Task 1b) to monitor monthly sales. Toggle them easily using JSX: `<BarChart />` or `<GaugeStatusChart />`.
+A modern React-based data visualization program. This tool supports **two modes** — an interactive Bar Chart (Task 1a) to visualize product sales and a Gauge Chart (Task 1b) to monitor monthly sales. Toggle them easily using JSX: `<BarChart />` or `<GaugeStatusChart />`.
 
 ---
 
